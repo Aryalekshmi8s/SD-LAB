@@ -1,0 +1,252 @@
+student@T13:~/arya$ more more.txt
+more command is used to view the text files in the command prompt, displaying on
+e screen at a time in case the file is large (For example log files). The more c
+ommand also allows the user do scroll up and down through the page. The syntax a
+long with options and command is as follows. Another application of more is to u
+se it with some other command after a pipe. When output is large, we can use mor
+e command to see output one by one. 
+options used with more command
+-d :use this command in order to help the user to navigate. It displays “[Press 
+space to continue, ‘q’ to quit.]” and displays “[Press ‘h’ for instructions.]” w
+hen wrong key is pressed.Description
+
+more is a filter for paging through text one screen at a time. It does not provi
+de as many options or enhancements as less, but is nevertheless quite useful and
+ simple to use.
+more syntax
+
+more [-dlfpcsu] [-num lines] [+/pattern] [+linenum] [file ...]
+
+Options
+-num lines 	Sets the number of lines that makes up a screenful. The lines mu
+st be an integer.
+-d 	With this option, more will prompt the user with the message "[Press spa
+ce to continue, 'q' to quit.]" and display "[Press 'h' for instructions.]" when 
+student@T13:~/arya$ more -d more.txt
+more command is used to view the text files in the command prompt, displaying on
+e screen at a time in case the file is large (For example log files). The more c
+ommand also allows the user do scroll up and down through the page. The syntax a
+long with options and command is as follows. Another application of more is to u
+se it with some other command after a pipe. When output is large, we can use mor
+e command to see output one by one. 
+options used with more command
+-d :use this command in order to help the user to navigate. It displays “[Press 
+space to continue, ‘q’ to quit.]” and displays “[Press ‘h’ for instructions.]” w
+hen wrong key is pressed.Description
+
+more is a filter for paging through text one screen at a time. It does not provi
+de as many options or enhancements as less, but is nevertheless quite useful and
+ simple to use.
+more syntax
+
+more [-dlfpcsu] [-num lines] [+/pattern] [+linenum] [file ...]
+
+Options
+-num lines 	Sets the number of lines that makes up a screenful. The lines mu
+st be an integer.
+-d 	With this option, more will prompt the user with the message "[Press spa
+ce to continue, 'q' to quit.]" and display "[Press 'h' for instructions.]" when 
+an illegal key is pressed, instead of ringing a bell.
+student@T13:~/arya$ more -d more.txt
+more command is used to view the text files in the command prompt, displaying on
+e screen at a time in case the file is large (For example log files). The more c
+ommand also allows the user do scroll up and down through the page. The syntax a
+long with options and command is as follows. Another application of more is to u
+se it with some other command after a pipe. When output is large, we can use mor
+e command to see output one by one. 
+options used with more command
+-d :use this command in order to help the user to navigate. It displays “[Press 
+space to continue, ‘q’ to quit.]” and displays “[Press ‘h’ for instructions.]” w
+hen wrong key is pressed.Description
+
+more is a filter for paging through text one screen at a time. It does not provi
+de as many options or enhancements as less, but is nevertheless quite useful and
+ simple to use.
+more syntax
+
+more [-dlfpcsu] [-num lines] [+/pattern] [+linenum] [file ...]
+
+Options
+-num lines 	Sets the number of lines that makes up a screenful. The lines mu
+st be an integer.
+-d 	With this option, more will prompt the user with the message "[Press spa
+ce to continue, 'q' to quit.]" and display "[Press 'h' for instructions.]" when 
+student@T13:~/arya$ more -l more.txt
+more command is used to view the text files in the command prompt, displaying on
+e screen at a time in case the file is large (For example log files). The more c
+ommand also allows the user do scroll up and down through the page. The syntax a
+long with options and command is as follows. Another application of more is to u
+se it with some other command after a pipe. When output is large, we can use mor
+e command to see output one by one. 
+options used with more command
+-d :use this command in order to help the user to navigate. It displays “[Press 
+space to continue, ‘q’ to quit.]” and displays “[Press ‘h’ for instructions.]” w
+hen wrong key is pressed.Description
+
+more is a filter for paging through text one screen at a time. It does not provi
+de as many options or enhancements as less, but is nevertheless quite useful and
+ simple to use.
+more syntax
+
+more [-dlfpcsu] [-num lines] [+/pattern] [+linenum] [file ...]
+
+Options
+-num lines 	Sets the number of lines that makes up a screenful. The lines mu
+st be an integer.
+-d 	With this option, more will prompt the user with the message "[Press spa
+ce to continue, 'q' to quit.]" and display "[Press 'h' for instructions.]" when 
+student@T13:~/arya$ more -5 more.txt
+more command is used to view the text files in the command prompt, displaying on
+e screen at a time in case the file is large (For example log files). The more c
+ommand also allows the user do scroll up and down through the page. The syntax a
+long with options and command is as follows. Another application of more is to u
+se it with some other command after a pipe. When output is large, we can use mor
+student@T13:~/arya$ more -p more.txt
+
+more command is used to view the text files in the command prompt, displaying on
+e screen at a time in case the file is large (For example log files). The more c
+ommand also allows the user do scroll up and down through the page. The syntax a
+long with options and command is as follows. Another application of more is to u
+se it with some other command after a pipe. When output is large, we can use mor
+e command to see output one by one. 
+options used with more command
+-d :use this command in order to help the user to navigate. It displays “[Press 
+space to continue, ‘q’ to quit.]” and displays “[Press ‘h’ for instructions.]” w
+hen wrong key is pressed.Description
+
+more is a filter for paging through text one screen at a time. It does not provi
+de as many options or enhancements as less, but is nevertheless quite useful and
+ simple to use.
+more syntax
+
+more [-dlfpcsu] [-num lines] [+/pattern] [+linenum] [file ...]
+
+Options
+-num lines 	Sets the number of lines that makes up a screenful. The lines mu
+st be an integer.
+-d 	With this option, more will prompt the user with the message "[Press spa
+ce to continue, 'q' to quit.]" and display "[Press 'h' for instructions.]" when 
+student@T13:~/arya$ more -p more.txt
+
+more command is used to view the text files in the command prompt, displaying on
+e screen at a time in case the file is large (For example log files). The more c
+ommand also allows the user do scroll up and down through the page. The syntax a
+long with options and command is as follows. Another application of more is to u
+se it with some other command after a pipe. When output is large, we can use mor
+e command to see output one by one. 
+options used with more command
+-d :use this command in order to help the user to navigate. It displays “[Press 
+space to continue, ‘q’ to quit.]” and displays “[Press ‘h’ for instructions.]” w
+hen wrong key is pressed.Description
+
+more is a filter for paging through text one screen at a time. It does not provi
+de as many options or enhancements as less, but is nevertheless quite useful and
+ simple to use.
+more syntax
+
+more [-dlfpcsu] [-num lines] [+/pattern] [+linenum] [file ...]
+
+Options
+-num lines 	Sets the number of lines that makes up a screenful. The lines mu
+st be an integer.
+-d 	With this option, more will prompt the user with the message "[Press spa
+ce to continue, 'q' to quit.]" and display "[Press 'h' for instructions.]" when 
+student@T13:~/arya$ more -u more.txt
+more command is used to view the text files in the command prompt, displaying on
+e screen at a time in case the file is large (For example log files). The more c
+ommand also allows the user do scroll up and down through the page. The syntax a
+long with options and command is as follows. Another application of more is to u
+se it with some other command after a pipe. When output is large, we can use mor
+e command to see output one by one. 
+options used with more command
+-d :use this command in order to help the user to navigate. It displays “[Press 
+space to continue, ‘q’ to quit.]” and displays “[Press ‘h’ for instructions.]” w
+hen wrong key is pressed.Description
+
+more is a filter for paging through text one screen at a time. It does not provi
+de as many options or enhancements as less, but is nevertheless quite useful and
+ simple to use.
+more syntax
+
+more [-dlfpcsu] [-num lines] [+/pattern] [+linenum] [file ...]
+
+Options
+-num lines 	Sets the number of lines that makes up a screenful. The lines mu
+st be an integer.
+-d 	With this option, more will prompt the user with the message "[Press spa
+ce to continue, 'q' to quit.]" and display "[Press 'h' for instructions.]" when 
+student@T13:~/arya$ more -f more.txt
+more command is used to view the text files in the command prompt, displaying one screen at a time in case the file is large (For example log files). The more command also allows the user do scroll up and down through the page. The syntax along with options and command is as follows. Another application of more is
+ to use it with some other command after a pipe. When output is large, we can use more command to see output one by one. 
+options used with more command
+-d :use this command in order to help the user to navigate. It displays “[Press space to continue, ‘q’ to quit.]” and displays “[Press ‘h’ for instructions.]” when wrong key is pressed.Description
+
+more is a filter for paging through text one screen at a time. It does not provide as many options or enhancements as less, but is nevertheless quite useful and simple to use.
+more syntax
+
+more [-dlfpcsu] [-num lines] [+/pattern] [+linenum] [file ...]
+
+Options
+-num lines 	Sets the number of lines that makes up a screenful. The lines must be an integer.
+-d 	With this option, more will prompt the user with the message "[Press space to continue, 'q' to quit.]" and display "[Press 'h' for instructions.]" when an illegal key is pressed, instead of ringing a bell.
+-l 	more usually treats ^L (CONTROL-L, the form feed) as a special charactermore command is used to view the text files in the command prompt, displaying on
+e screen at a time in case the file is large (For example log files). The more c
+ommand also allows the user do scroll up and down through the page. The syntax a
+long with options and command is as follows. Another application of more is to u
+se it with some other command after a pipe. When output is large, we can use mor
+e command to see output one by one. 
+options used with more command
+-d :use this command in order to help the user to navigate. It displays “[Press 
+space to continue, ‘q’ to quit.]” and displays “[Press ‘h’ for instructions.]” w
+hen wrong key is pressed.Description
+
+more is a filter for paging through text one screen at a time. It does not provi
+de as many options or enhancements as less, but is nevertheless quite useful and
+ simple to use.
+more syntax
+
+more [-dlfpcsu] [-num lines] [+/pattern] [+linenum] [file ...]
+
+Options
+-num lines 	Sets the number of lines that makes up a screenful. The lines mu
+st be an integer.
+-d 	With this option, more will prompt the user with the message "[Press spa
+ce to continue, 'q' to quit.]" and display "[Press 'h' for instructions.]" when 
+student@T13:~/arya$ less more.txt
+student@T13:~/arya$ less -p more.txt
+Missing filename ("less --help" for help)
+student@T13:~/arya$ less sam.txt
+student@T13:~/arya$ less -4 sam.txt
+student@T13:~/arya$ ls -la|less sam.txt
+student@T13:~/arya$ ls -la|less 
+student@T13:~/arya$ less +4 sam.txt
+student@T13:~/arya$ more +/yes sam.txt
+
+...skipping
+No 
+NOoooooooo
+Yesssssssssssssss yes
+~
+~
+~
+~
+..
+student@T13:~/arya$ cat sam.txt
+Line 1
+Hi i am a good boy.
+I am x . 
+Be cool and calm 
+Happy birthday 
+I am  Bond 00 7 
+Eurekaa !!! I Got it !
+Yes 
+No 
+NOoooooooo
+Yesssssssssssssss yes
+~
+~
+~
+~
+..
+student@T13:~/arya$ ls|more more.txt
+

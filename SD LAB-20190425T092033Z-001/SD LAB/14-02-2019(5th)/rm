@@ -1,0 +1,35 @@
+student@T13:~$ cd arya
+student@T13:~/arya$ ls
+copy  hello.txt~  lekshmi  one.txt  values
+student@T13:~/arya$ rm one.txt
+student@T13:~/arya$ ls
+copy  hello.txt~  lekshmi  values
+student@T13:~/arya$ cd lekshmi
+student@T13:~/arya/lekshmi$ ls
+student@T13:~/arya/lekshmi$ cd ..
+student@T13:~/arya$ cd copy
+student@T13:~/arya/copy$ ls
+copy1.txt   cp1.txt        cp.txt   home        one.txt           source
+copy2.txt   cp2.txt        dest     names.txt   one.txt~
+course.txt  cp2.txtcp.txt  details  names.txt~  one.txtnames.txt
+student@T13:~/arya/copy$ rm *.txt
+student@T13:~/arya/copy$ ls
+dest  details  home  names.txt~  one.txt~  source
+student@T13:~/arya/copy$ rm -R source
+student@T13:~/arya/copy$ ls
+dest  details  home  names.txt~  one.txt~
+student@T13:~/arya/copy$ rm -R dest
+student@T13:~/arya/copy$ ls
+details  home  names.txt~  one.txt~
+student@T13:~/arya/copy$ rm -R details
+student@T13:~/arya/copy$ ls
+home  names.txt~  one.txt~
+student@T13:~/arya/copy$ cd ..
+student@T13:~/arya$ cd copy
+student@T13:~/arya/copy$ cd home
+student@T13:~/arya/copy/home$ ls
+copy1.txt  copy2.txt
+student@T13:~/arya/copy/home$ rm copy1.txt copy2.txt
+student@T13:~/arya/copy/home$ ls
+student@T13:~/arya/copy/home$ 
+

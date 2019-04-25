@@ -1,0 +1,76 @@
+student@T13:~$ cd arya
+student@T13:~/arya$ head one.txt
+arya
+arjun
+dona
+asha
+anjali
+anita
+aalbi
+anju
+fergy
+siju
+student@T13:~/arya$ head -5 one.txt
+arya
+arjun
+dona
+asha
+anjali
+student@T13:~/arya$ tail one.txt
+anjali
+anita
+aalbi
+anju
+fergy
+siju
+sandeep
+vishnu
+praveena
+aparna
+student@T13:~/arya$ tail -3 one.txt
+vishnu
+praveena
+aparna
+student@T13:~/arya$ head -n 10 one.txt | tail -n 1
+siju
+student@T13:~/arya$ head -c4 one.txt
+aryastudent@T13:~/arya$ head -c5 one.txt
+arya
+student@T13:~/arya$  tail 0 one.txt
+tail: cannot open '0' for reading: No such file or directory
+==> one.txt <==
+anjali
+anita
+aalbi
+anju
+fergy
+siju
+sandeep
+vishnu
+praveena
+aparna
+student@T13:~/arya$ more -f one.txt
+arya
+arjun
+dona
+asha
+anjali
+anita
+aalbi
+anju
+fergy
+siju
+sandeep
+vishnu
+praveena
+aparna
+student@T13:~/arya$ tail +9 one.txt
+fergy
+siju
+sandeep
+vishnu
+praveena
+aparna
+student@T13:~/arya$ less +4 one.txt
+student@T13:~/arya$ 
+

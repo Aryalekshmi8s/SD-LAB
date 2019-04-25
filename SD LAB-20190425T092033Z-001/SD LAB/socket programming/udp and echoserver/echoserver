@@ -1,0 +1,196 @@
+
+server2.java
+
+import java.net.*;
+import java.io.*;
+public class server2 
+{
+	public static void main( String args[]) throws Exception
+	{
+		ServerSocket srs = new ServerSocket(1234);
+		System.out.println("Server is running...");
+		Socket ss=srs.accept();
+		System.out.println("connection establised");
+		BufferedReader br = new BufferedReader(new InputStreamReader(ss.getInputStream()));
+		DataOutputStream dos = new DataOutputStream(ss.getOutputStream());
+
+ while(true)
+ {
+   String s2; 
+  while((s2=br.readLine())!=null)
+  {
+ 	System.out.println("server send echo to client ");
+ 	dos.writeBytes(s2+"\n");
+  }
+  System.out.println("Terminated..");
+  ss.close(); 
+  srs.close();
+  dos.close();
+  System.exit(0);
+  }
+ }
+}
+
+
+client2.jav
+import java.net.*;
+import java.io.*;
+public class Client2 
+{
+	public static void main( String args[]) throws Exception
+	{
+	Socket cs = new Socket("localhost",1234);
+	BufferedReader kb = new BufferedReader(new InputStreamReader(System.in));
+	BufferedReader br = new BufferedReader(new InputStreamReader(cs.getInputStream()));
+	DataOutputStream dos = new DataOutputStream(cs.getOutputStream());
+
+	System.out.println(" Enter text..");
+	System.out.println(" if client 'quit' type  exit");
+	  
+	String s1,s3=null; 
+	while(!(s1=kb.readLine()).equals("exit"))
+	{
+		//System.out.println(" data  send to server machine");
+	 	dos.writeBytes(s1+"\n");
+		s3 = br.readLine();
+		//System.out.println(" data  receive from  server machine");
+		System.out.println("Server said : "+s3);
+		System.out.println("Enter text ");
+	}
+		System.out.println("Terminated..");
+		cs.close(); 
+		dos.close();
+		kb.close();
+	}
+}
+
+
+student@S36:~$ cd arya
+student@S36:~/arya$ javac server2.java
+student@S36:~/arya$ java server2
+Server is running...
+connection establised
+server send echo to client 
+server send echo to client 
+
+
+student@S36:~$ cd arya
+student@S36:~/arya$ javac Client2.java
+student@S36:~/arya$ java Client2
+ Enter text..
+ if client 'quit' type  exit
+hai
+Server said : hai
+Enter text 
+am arya
+Server said : am arya
+Enter text 
+
+
+
+
+server.java
+import java.io.IOException; 
+import java.net.DatagramPacket; 
+import java.net.DatagramSocket; 
+import java.net.InetAddress; 
+import java.net.SocketException; 
+public class udpserver
+{ 
+	public static void main(String[] args) throws IOException 
+	{ 
+		
+		DatagramSocket ds = new DatagramSocket(1234); 
+		byte[] receive = new byte[65535]; 
+		DatagramPacket DpReceive = null; 
+		while (true) 
+		{ 
+			
+			DpReceive = new DatagramPacket(receive, receive.length); 
+			
+			ds.receive(DpReceive); 
+
+			System.out.println("Client:-" + data(receive)); 
+			
+			if (data(receive).toString().equals("bye")) 
+			{ 
+				System.out.println("Client sent bye.....EXITING"); 
+				break; 
+			} 
+			
+			receive = new byte[65535]; 
+		} 
+	} 
+	
+	public static StringBuilder data(byte[] a) 
+	{ 
+		if (a == null) 
+			return null; 
+		StringBuilder ret = new StringBuilder(); 
+		int i = 0; 
+		while (a[i] != 0) 
+		{ 
+			ret.append((char) a[i]); 
+			i++; 
+		} 
+		return ret; 
+	} 
+}
+
+java
+
+
+import java.io.IOException; 
+import java.net.DatagramPacket; 
+import java.net.DatagramSocket; 
+import java.net.InetAddress; 
+import java.util.Scanner; 
+public class udpclient
+{ 
+	public static void main(String args[]) throws IOException 
+	{ 
+		Scanner sc = new Scanner(System.in); 
+
+		DatagramSocket ds = new DatagramSocket(); 
+		InetAddress ip = InetAddress.getLocalHost(); 
+		byte buf[] = null; 
+	
+		while (true) 
+		{ 
+			String inp = sc.nextLine(); 
+			
+			buf = inp.getBytes(); 
+			
+			DatagramPacket DpSend = 
+				new DatagramPacket(buf, buf.length, ip, 1234); 
+			
+			ds.send(DpSend); 
+			
+			if (inp.equals("bye")) 
+				break; 
+		} 
+	} 
+} 
+
+student@S36:~$ cd arya
+student@S36:~/arya$ javac udpclient.java
+student@S36:~/arya$ java udpclient
+hai
+am arya
+welcome
+bye
+
+student@S36:~$ cd arya
+student@S36:~/arya$ javac udpserver.java
+student@S36:~/arya$ java udpserver
+Client:-hai
+Client:-am arya
+Client:-welcome
+Client:-bye
+Client sent bye.....EXITING
+
+
+
+
+
+

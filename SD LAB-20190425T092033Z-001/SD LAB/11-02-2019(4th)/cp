@@ -1,0 +1,409 @@
+student@T13:~$ mkdir copy
+student@T13:~$ cat >cop1.txt
+c1
+c2
+c3^Z
+[1]+  Stopped                 cat > cop1.txt
+student@T13:~$ cat copy1.txt
+cat: copy1.txt: No such file or directory
+student@T13:~$ cat cop1.txt
+c1
+c2
+student@T13:~$ cat >copy1.txt
+c1
+c2
+c3
+c4
+^Z
+[2]+  Stopped                 cat > copy1.txt
+student@T13:~$ cat copy1.txt
+c1
+c2
+c3
+c4
+student@T13:~$ cat copy2.txt
+cat: copy2.txt: No such file or directory
+student@T13:~$ cat >copy2.txt
+c5
+c6
+c7
+^Z
+[3]+  Stopped                 cat > copy2.txt
+student@T13:~$ cat copy2.txt
+c5
+c6
+c7
+student@T13:~$ ls
+cop1.txt   copy2.txt  Downloads         NetBeansProjects  Templates
+copy       Desktop    examples.desktop  Pictures          Videos
+copy1.txt  Documents  Music             Public
+student@T13:~$ cd copy
+student@T13:~/copy$ ls
+student@T13:~/copy$ cat >copy1.txt
+c1
+c2
+c3
+^Z
+[4]+  Stopped                 cat > copy1.txt
+student@T13:~/copy$ cat >copy2.txt
+arya
+dona
+asha
+arjun
+^Z
+[5]+  Stopped                 cat > copy2.txt
+student@T13:~/copy$ cat copy1.txt
+c1
+c2
+c3
+student@T13:~/copy$ cat copy2.txt
+arya
+dona
+asha
+arjun
+student@T13:~/copy$ cp copy2.txt names.txt
+student@T13:~/copy$ ls
+copy1.txt  copy2.txt  names.txt
+student@T13:~/copy$ cp copy1.txt copy2.txt
+student@T13:~/copy$ ls
+copy1.txt  copy2.txt  names.txt
+student@T13:~/copy$ cat copy1.txt
+c1
+c2
+c3
+student@T13:~/copy$ cat copy2.txt
+c1
+c2
+c3
+student@T13:~/copy$ cat names.txt
+arya
+dona
+asha
+arjun
+student@T13:~/copy$ cat >course.txt
+mca
+mtech
+btech
+bba
+^Z
+[6]+  Stopped                 cat > course.txt
+student@T13:~/copy$ cat course.txt
+mca
+mtech
+btech
+bba
+student@T13:~/copy$ cp *.txt details.txt
+cp: target 'details.txt' is not a directory
+student@T13:~/copy$ mkdir details
+student@T13:~/copy$ ls
+copy1.txt  copy2.txt  course.txt  details  names.txt
+student@T13:~/copy$ cp *.txt details
+student@T13:~/copy$ ls
+copy1.txt  copy2.txt  course.txt  details  names.txt
+student@T13:~/copy$ cat details
+cat: details: Is a directory
+student@T13:~/copy$ mkdir source
+student@T13:~/copy$ mkdir dest
+student@T13:~/copy$ ls
+copy1.txt  copy2.txt  course.txt  dest  details  names.txt  source
+student@T13:~/copy$ cp -R source dest
+student@T13:~/copy$ ls
+copy1.txt  copy2.txt  course.txt  dest  details  names.txt  source
+student@T13:~/copy$ cd dest
+student@T13:~/copy/dest$ ls
+source
+student@T13:~/copy/dest$ mkdir main
+student@T13:~/copy/dest$ cd ..
+student@T13:~/copy$ mkdir home
+student@T13:~/copy$ cp details dest source home
+cp: -r not specified; omitting directory 'details'
+cp: -r not specified; omitting directory 'dest'
+cp: -r not specified; omitting directory 'source'
+student@T13:~/copy$ cp  dest source home
+cp: -r not specified; omitting directory 'dest'
+cp: -r not specified; omitting directory 'source'
+student@T13:~/copy$ cp home source dest
+cp: -r not specified; omitting directory 'home'
+cp: -r not specified; omitting directory 'source'
+student@T13:~/copy$ man cp
+student@T13:~/copy$ cp -r home source dest
+student@T13:~/copy$ cd dest
+student@T13:~/copy/dest$ ls
+home  main  source
+student@T13:~/copy/dest$ rmdir home
+student@T13:~/copy/dest$ rmdir source
+student@T13:~/copy/dest$ cd ..
+student@T13:~/copy$ cp -r home source dest
+student@T13:~/copy$ cp -i copy1.txt names.txt
+cp: overwrite 'names.txt'? n
+student@T13:~/copy$ cp -b copy1.txt names.txt
+student@T13:~/copy$ ls
+copy1.txt  course.txt  details  names.txt   source
+copy2.txt  dest        home     names.txt~
+student@T13:~/copy$ man cp
+student@T13:~/copy$ cp copy1.txt copy2.txt home
+student@T13:~/copy$ cp copy1.txt  dest
+student@T13:~/copy$ man cp
+student@T13:~/copy$ cp copy1.txt copy2.txt names.txt new.txt
+cp: target 'new.txt' is not a directory
+student@T13:~/copy$ cp copy1.txt source
+student@T13:~/copy$ cat >one.txt
+1
+2
+3
+4
+^Z
+[7]+  Stopped                 cat > one.txt
+student@T13:~/copy$ cat one.txt
+1
+2
+3
+4
+student@T13:~/copy$ cp -S names.txt one.txt
+cp: missing destination file operand after 'one.txt'
+Try 'cp --help' for more information.
+student@T13:~/copy$ cp -S names.txt copy1.txt one.txt
+student@T13:~/copy$ man cp
+student@T13:~/copy$ cat >cp.txt
+a
+b
+c
+d
+^Z
+[8]+  Stopped                 cat > cp.txt
+student@T13:~/copy$ cat >cp1.txt
+12
+13
+14
+15
+^Z
+[9]+  Stopped                 cat > cp1.txt
+student@T13:~/copy$ cat >cp2.txt
+helo
+world
+^Z
+[10]+  Stopped                 cat > cp2.txt
+student@T13:~/copy$ cp -S cp.txt cp1.txt cp2.txt
+student@T13:~/copy$ cp -b cp2.txt one.txt
+student@T13:~/copy$ rmdir copy1.txt
+rmdir: failed to remove 'copy1.txt': Not a directory
+student@T13:~/copy$ rmdir dest
+rmdir: failed to remove 'dest': Directory not empty
+student@T13:~/copy$ cd dest
+student@T13:~/copy/dest$ rmdir source
+student@T13:~/copy/dest$ cd ~
+student@T13:~$ mkdir
+mkdir: missing operand
+Try 'mkdir --help' for more information.
+student@T13:~$ mkdir arya
+student@T13:~$ cat >hai.txt
+a
+b
+c
+d
+^Z
+[11]+  Stopped                 cat > hai.txt
+student@T13:~$ cat >hello.txt
+1
+2
+3
+4
+^Z
+[12]+  Stopped                 cat > hello.txt
+student@T13:~$ cp -b hai.txt hello.txt
+student@T13:~$ ls
+arya      copy1.txt  Documents         hai.txt     Music             Public
+cop1.txt  copy2.txt  Downloads         hello.txt   NetBeansProjects  Templates
+copy      Desktop    examples.desktop  hello.txt~  Pictures          Videos
+student@T13:~$ cd arya
+student@T13:~/arya$ cat >hai.txt
+arya
+lekshmi
+^Z
+[13]+  Stopped                 cat > hai.txt
+student@T13:~/arya$ cat >hello.txt
+13
+mca
+^Z
+[14]+  Stopped                 cat > hello.txt
+student@T13:~/arya$ cp -b hai.txt hello.txt
+student@T13:~/arya$ ls
+hai.txt  hello.txt  hello.txt~
+student@T13:~/arya$ hello.txt
+hello.txt: command not found
+student@T13:~/arya$ cat hello.txt
+arya
+lekshmi
+student@T13:~/arya$ cat hello.txt~
+13
+mca
+student@T13:~/arya$ cp -n hai.txt hello.txt
+student@T13:~/arya$ ls
+hai.txt  hello.txt  hello.txt~
+student@T13:~/arya$ ls
+hai.txt  hello.txt  hello.txt~
+student@T13:~/arya$ cat >mine.txt
+happy
+life
+^Z
+[15]+  Stopped                 cat > mine.txt
+student@T13:~/arya$ ls
+hai.txt  hello.txt  hello.txt~  mine.txt
+student@T13:~/arya$ cp -u hello.txt mine.txt
+student@T13:~/arya$ ls
+hai.txt  hello.txt  hello.txt~  mine.txt
+student@T13:~/arya$ cat hello.txt
+
+lekshmi
+lechu
+
+student@T13:~/arya$ cat mine.txt
+happy
+life
+student@T13:~/arya$ cp -u mine.txt hello.txt
+student@T13:~/arya$ cat hello.txt
+happy
+life
+student@T13:~/arya$ cat mine.txt
+happy
+life
+student@T13:~/arya$ cd ~
+student@T13:~$ mkdir lekshmi
+student@T13:~$ cp -R lekshmi copy arya
+student@T13:~$ cd lekshmi
+student@T13:~/lekshmi$ cd ..
+student@T13:~$ cd arya
+student@T13:~/arya$ ls
+copy  hai.txt  hello.txt  hello.txt~  lekshmi  mine.txt
+student@T13:~/arya$ cp -l hai.txt mine.txt
+cp: cannot create hard link 'mine.txt' to 'hai.txt': File exists
+student@T13:~/arya$ cp -l hai.txt 
+cp: missing destination file operand after 'hai.txt'
+Try 'cp --help' for more information.
+student@T13:~/arya$ cp --
+cp: missing file operand
+Try 'cp --help' for more information.
+student@T13:~/arya$ cp --attributes-only hai.txt mine.txt
+student@T13:~/arya$ ls
+copy  hai.txt  hello.txt  hello.txt~  lekshmi  mine.txt
+student@T13:~/arya$ cp --attributes-only hai.txt mine2.txt
+student@T13:~/arya$ cp -t hai.txt hello.txt mine.txt lekshmi
+cp: target 'hai.txt' is not a directory
+student@T13:~/arya$ cp -t lekshmi hai.txt hello.txt mine.txt 
+student@T13:~/arya$ ls
+copy  hai.txt  hello.txt  hello.txt~  lekshmi  mine2.txt  mine.txt
+student@T13:~/arya$ cd lekshmi
+student@T13:~/arya/lekshmi$ ls
+hai.txt  hello.txt  mine.txt
+student@T13:~/arya/lekshmi$ cd ..
+student@T13:~/arya$ cp -v hai.txt hello.txt
+'hai.txt' -> 'hello.txt'
+student@T13:~/arya$ cat hai.txt
+arya
+lekshmi
+student@T13:~/arya$ cat hello.txt
+arya
+lekshmi
+student@T13:~/arya$ cat >new.txt
+welcome
+^Z
+[16]+  Stopped                 cat > new.txt
+student@T13:~/arya$ cp -v hai.txt new.txt
+'hai.txt' -> 'new.txt'
+student@T13:~/arya$ cat hai.txt
+arya
+lekshmi
+student@T13:~/arya$ cat new.txt
+arya
+lekshmi
+student@T13:~/arya$ cp -help hai.txt new.txt
+cp: invalid option -- 'h'
+Try 'cp --help' for more information.
+student@T13:~/arya$ cp --help hai.txt new.txt
+Usage: cp [OPTION]... [-T] SOURCE DEST
+  or:  cp [OPTION]... SOURCE... DIRECTORY
+  or:  cp [OPTION]... -t DIRECTORY SOURCE...
+Copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY.
+
+Mandatory arguments to long options are mandatory for short options too.
+  -a, --archive                same as -dR --preserve=all
+      --attributes-only        don't copy the file data, just the attributes
+      --backup[=CONTROL]       make a backup of each existing destination file
+  -b                           like --backup but does not accept an argument
+      --copy-contents          copy contents of special files when recursive
+  -d                           same as --no-dereference --preserve=links
+  -f, --force                  if an existing destination file cannot be
+                                 opened, remove it and try again (this option
+                                 is ignored when the -n option is also used)
+  -i, --interactive            prompt before overwrite (overrides a previous -n
+                                  option)
+  -H                           follow command-line symbolic links in SOURCE
+  -l, --link                   hard link files instead of copying
+  -L, --dereference            always follow symbolic links in SOURCE
+  -n, --no-clobber             do not overwrite an existing file (overrides
+                                 a previous -i option)
+  -P, --no-dereference         never follow symbolic links in SOURCE
+  -p                           same as --preserve=mode,ownership,timestamps
+      --preserve[=ATTR_LIST]   preserve the specified attributes (default:
+                                 mode,ownership,timestamps), if possible
+                                 additional attributes: context, links, xattr,
+                                 all
+      --no-preserve=ATTR_LIST  don't preserve the specified attributes
+      --parents                use full source file name under DIRECTORY
+  -R, -r, --recursive          copy directories recursively
+      --reflink[=WHEN]         control clone/CoW copies. See below
+      --remove-destination     remove each existing destination file before
+                                 attempting to open it (contrast with --force)
+      --sparse=WHEN            control creation of sparse files. See below
+      --strip-trailing-slashes  remove any trailing slashes from each SOURCE
+                                 argument
+  -s, --symbolic-link          make symbolic links instead of copying
+  -S, --suffix=SUFFIX          override the usual backup suffix
+  -t, --target-directory=DIRECTORY  copy all SOURCE arguments into DIRECTORY
+  -T, --no-target-directory    treat DEST as a normal file
+  -u, --update                 copy only when the SOURCE file is newer
+                                 than the destination file or when the
+                                 destination file is missing
+  -v, --verbose                explain what is being done
+  -x, --one-file-system        stay on this file system
+  -Z                           set SELinux security context of destination
+                                 file to default type
+      --context[=CTX]          like -Z, or if CTX is specified then set the
+                                 SELinux or SMACK security context to CTX
+      --help     display this help and exit
+      --version  output version information and exit
+
+By default, sparse SOURCE files are detected by a crude heuristic and the
+corresponding DEST file is made sparse as well.  That is the behavior
+selected by --sparse=auto.  Specify --sparse=always to create a sparse DEST
+file whenever the SOURCE file contains a long enough sequence of zero bytes.
+Use --sparse=never to inhibit creation of sparse files.
+
+When --reflink[=always] is specified, perform a lightweight copy, where the
+data blocks are copied only when modified.  If this is not possible the copy
+fails, or if --reflink=auto is specified, fall back to a standard copy.
+
+The backup suffix is '~', unless set with --suffix or SIMPLE_BACKUP_SUFFIX.
+The version control method may be selected via the --backup option or through
+the VERSION_CONTROL environment variable.  Here are the values:
+
+  none, off       never make backups (even if --backup is given)
+  numbered, t     make numbered backups
+  existing, nil   numbered if numbered backups exist, simple otherwise
+  simple, never   always make simple backups
+
+As a special case, cp makes a backup of SOURCE when the force and backup
+options are given and SOURCE and DEST are the same name for an existing,
+regular file.
+
+GNU coreutils online help: <http://www.gnu.org/software/coreutils/>
+Full documentation at: <http://www.gnu.org/software/coreutils/cp>
+or available locally via: info '(coreutils) cp invocation'
+student@T13:~/arya$ cat new.txt
+arya
+lekshmi
+student@T13:~/arya$ cat hello.txt
+arya
+lekshmi
+student@T13:~/arya$ 
+

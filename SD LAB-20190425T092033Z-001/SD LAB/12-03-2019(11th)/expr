@@ -1,0 +1,97 @@
+addition
+student@T13:~$ expr 12 + 8
+20
+
+multiplication
+
+student@T13:~$ expr 12 \* 2
+24
+
+incerement
+
+student@T13:~$ x=10
+student@T13:~$ x=`expr $x + 1`
+student@T13:~$ echo $x
+11
+
+sum
+
+student@T13:~$ echo "enter any two numbers"
+enter any two numbers
+student@T13:~$ read x
+1
+student@T13:~$ read y
+4
+student@T13:~$ sum=`expr $x + $y`
+student@T13:~$ echo "sum= $sum"
+sum= 5
+
+string matching
+ 
+student@T13:~$ x=10
+student@T13:~$ y=20
+student@T13:~$ res=`expr $x = $y`
+student@T13:~$ echo $res
+0
+
+student@T13:~$ x=10
+student@T13:~$ y=10
+student@T13:~$ res=`expr $x = $y`
+student@T13:~$ echo $res
+1
+
+help
+
+student@T13:~$ expr --help
+Usage: expr EXPRESSION
+  or:  expr OPTION
+
+      --help     display this help and exit
+      --version  output version information and exit
+
+Print the value of EXPRESSION to standard output.  A blank line below
+separates increasing precedence groups.  EXPRESSION may be:
+
+  ARG1 | ARG2       ARG1 if it is neither null nor 0, otherwise ARG2
+
+  ARG1 & ARG2       ARG1 if neither argument is null or 0, otherwise 0
+
+  ARG1 < ARG2       ARG1 is less than ARG2
+  ARG1 <= ARG2      ARG1 is less than or equal to ARG2
+  ARG1 = ARG2       ARG1 is equal to ARG2
+  ARG1 != ARG2      ARG1 is unequal to ARG2
+  ARG1 >= ARG2      ARG1 is greater than or equal to ARG2
+  ARG1 > ARG2       ARG1 is greater than ARG2
+
+  ARG1 + ARG2       arithmetic sum of ARG1 and ARG2
+  ARG1 - ARG2       arithmetic difference of ARG1 and ARG2
+
+  ARG1 * ARG2       arithmetic product of ARG1 and ARG2
+  ARG1 / ARG2       arithmetic quotient of ARG1 divided by ARG2
+  ARG1 % ARG2       arithmetic remainder of ARG1 divided by ARG2
+
+  STRING : REGEXP   anchored pattern match of REGEXP in STRING
+
+ substring
+
+student@T13:~$ s=aryalekshmi
+student@T13:~$ sub=`expr substr $s 1 4`
+student@T13:~$ echo $sub
+arya
+
+matching count
+
+student@T13:~$ expr aryalekshmi : arya
+4
+
+student@T13:~$ expr arya : hai
+0
+
+length
+
+student@T13:~$ s=aryalekshmi
+student@T13:~$ len=`expr length $s`
+student@T13:~$ echo $len
+11
+
+

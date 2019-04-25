@@ -1,0 +1,77 @@
+student@T13:~$ cd lechu
+student@T13:~/lechu$ grep "generosity" budha.txt
+    Silence the angry man with love. Silence the ill-natured man with kindness. Silence the miser with generosity. Silence the liar with truth.
+student@T13:~/lechu$ grep "generosity" budha.txt
+Silence the miser with generosity. 
+student@T13:~/lechu$ grep "love" budha.txt osho.txt
+budha.txt: Silence the angry man with love.
+osho.txt:“If you love a flower, don’t pick it up.
+osho.txt:Because if you pick it up it dies and it ceases to be what you love.
+osho.txt:So if you love a flower, let it be.
+student@T13:~/lechu$ grep -i "FloweR" osho.txt
+“If you love a flower, don’t pick it up.
+So if you love a flower, let it be.
+student@T13:~/lechu$ egrep -w 'kindness|possession' budha.txt osha.txt
+budha.txt: Silence the ill-natured man with kindness. 
+grep: osha.txt: No such file or directory
+student@T13:~/lechu$ egrep -w 'kindness|possession' budha.txt 
+ Silence the ill-natured man with kindness. 
+Silence the liar with truth possession.
+student@T13:~/lechu$ grep -i "Flower" osho.txt
+“If you love a flower, don’t pick it up.
+So if you love a flower, let it be.
+student@T13:~/lechu$ grep -v "arya" osho.txt
+“If you love a flower, don’t pick it up.
+Because if you pick it up it dies and it ceases to be what you love.
+So if you love a flower, let it be.
+Love is not about possession.
+Love is about appreciation.” 
+student@T13:~/lechu$ grep -n "is" budha.txt
+3:    There is no fear for one whose mind is not filled with desires.
+5:    Even death is not to be feared by one who has lived wisely.
+7:    Irrigators channel waters; fletchers straighten arrows; carpenters bend wood; the wise master themselves.
+9:    Drop by drop is the water pot filled. Likewise, the wise man, gathering it little by little, fills himself with good.
+11:    Better than a thousand hollow words, is one word that brings peace.
+15:    The root of suffering is attachment.
+19:Silence the miser with generosity. 
+student@T13:~/lechu$ grep -B3 "peace" budha.txt
+
+    Drop by drop is the water pot filled. Likewise, the wise man, gathering it little by little, fills himself with good.
+
+    Better than a thousand hollow words, is one word that brings peace.
+student@T13:~/lechu$ grep -B3 "possession" budha.txt
+ Silence the angry man with love.
+ Silence the ill-natured man with kindness. 
+Silence the miser with generosity. 
+Silence the liar with truth possession.
+student@T13:~/lechu$ grep -A2 "angry" budha.txt
+ Silence the angry man with love.
+ Silence the ill-natured man with kindness. 
+Silence the miser with generosity. 
+student@T13:~/lechu$ grep -l "love" budha.txt
+budha.txt
+student@T13:~/lechu$ grep -c "love" budha.txt
+1
+student@T13:~/lechu$ grep -c "one" budha.txt
+5
+student@T13:~/lechu$ grep "^silence" budha.txt
+student@T13:~/lechu$ grep "^silence" budha.txt
+student@T13:~/lechu$ grep "^Silence" budha.txt
+Silence the angry man with love.
+Silence the ill-natured man with kindness. 
+Silence the miser with generosity. 
+Silence the liar with truth possession.
+student@T13:~/lechu$ grep "one$" budha.txt
+student@T13:~/lechu$ grep "love$" budha.txt
+student@T13:~/lechu$ grep   "about" budha.txt
+If you knew what I know about the power of giving, you would not let a single meal pass without sharing it in some way.
+student@T13:~/lechu$ grep   "about" osho.txt
+Love is not about possession.
+Love is about appreciation.” 
+student@T13:~/lechu$ grep   "about$" osho.txt
+student@T13:~/lechu$ grep   "possession$" osho.txt
+student@T13:~/lechu$ grep   "is$" osho.txt
+student@T13:~/lechu$ grep   "possession.$" osho.txt
+Love is not about possession.
+student@T13:~/lechu$ 
+

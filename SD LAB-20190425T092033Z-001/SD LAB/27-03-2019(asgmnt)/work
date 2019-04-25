@@ -1,0 +1,194 @@
+Ques 1. Write a shell program to pass two number arguments in command line and
+check whether these numbers are equal or less than or greater than. (use if)
+
+echo -e "enter two numbers : \c"
+read a b
+if [ $a -eq $b ]
+then
+echo " $a and $b are equal"
+elif [ $a -gt $b ]
+then
+echo "$a is greater"
+elif [ $a -lt $b ]
+then
+echo "$a is less than $b"
+else
+echo "no matches.."
+fi
+
+code:
+
+student@T13:~$ chmod +x first.sh
+student@T13:~$ ./first.sh
+enter two numbers : 1 1
+1 and 1 are equal
+student@T13:~$ ./first.sh
+enter two numbers : 1 2
+1 is less than 2
+student@T13:~$ ./first.sh
+enter two numbers : 6 2
+6 is greater
+
+Ques 2. Write a shell program to read a number given by user and check whether the
+number is even or odd or zero. (use if)
+
+echo -e "enter a number : \c "
+read a
+r=$(($a %2 ))
+if [ $a -eq 0 ]
+then
+echo "$a is 0" 
+elif [ $r -eq 0 ]
+then
+echo "$a is  even"
+else
+echo "$a is odd"
+fi
+
+
+code
+
+student@T13:~$ chmod +x two.sh
+student@T13:~$ ./two.sh
+enter a number : 6
+6 is  even
+student@T13:~$ ./two.sh
+enter a number : 1
+1 is odd
+student@T13:~$ ./two.sh
+enter a number : 0
+0 is  0
+
+Ques 3. Write a shell program to read a year from user and check whether the year is
+leap or not. (use if)
+
+echo -e "enter a year "
+read yr
+   if [ $(( yr % 4)) -eq 0 ] 
+   then
+     if [ $(( yr % 100)) -eq 0 ]
+       then 
+         if [ $(( yr % 400)) -eq 0 ]
+            then
+            echo "$yr is leap year"
+         else
+            echo "$yr is not leap year"
+         fi
+     else
+           echo "$yr is leap year"
+      fi
+   else
+     echo "$yr is not leap year"
+   fi
+
+code
+
+student@T13:~$ ./three.sh
+enter a year 
+2020
+2020 is leap year
+student@T13:~$ ./three.sh
+enter a year 
+1900
+1900 is not leap year
+student@T13:~$ ./three.sh
+enter a year 
+1800
+1800 is not leap year
+
+
+Ques 4. Write a shell program to read a character from user and check whether it is
+consonant or vowel or not an alphabet. (use if)
+
+echo -e "enter a character"
+read x
+y='[a-z A-Z]'
+if [[ "$x" =~ $y ]]
+ then
+ if [[ "$x" == *[AEIOUaeiou]* ]]
+then
+ echo "$x is vowel"
+ else
+ echo "$x is consonent"
+ fi
+ else
+ echo "not an alphabet"
+fi
+
+
+code
+
+student@T13:~$ ./four.sh
+enter a character
+A
+A is vowel
+student@T13:~$ ./four.sh
+enter a character
+O
+O is vowel
+student@T13:~$ ./four.sh
+enter a character
+y
+y is consonent
+student@T13:~$ ./four.sh
+enter a character
+0
+not an alphabet
+student@T13:~$ ./four.sh
+enter a character
+}
+not an alphabet
+
+
+
+Ques 5. Write a shell program to print all natural numbers in reverse from 1 to n. (read
+the value of ‘n’ from user) (use for)
+
+echo -e "enter a limit: \c "
+read n
+for (( i=n; i>=1; i--))
+do
+echo "$i"
+done
+
+code
+
+student@T13:~$ ./five.sh
+enter a limit: 6
+6
+5
+4
+3
+2
+1
+
+
+Ques 6. Write a shell program to print multiplication table of a number. (read the value
+of ‘n’ from user) (use for)
+
+
+echo -e "Enter a number:\c"
+read n
+echo "Multiplication Table of $n"
+for i in {1..10}
+do
+  p=$(($i * $n))
+  echo "$i * $n = $p"
+done
+
+student@T13:~$ ./six.sh
+Enter a number:3
+Multiplication Table of 3
+1 * 3 = 3
+2 * 3 = 6
+3 * 3 = 9
+4 * 3 = 12
+5 * 3 = 15
+6 * 3 = 18
+7 * 3 = 21
+8 * 3 = 24
+9 * 3 = 27
+10 * 3 = 30
+
+
+

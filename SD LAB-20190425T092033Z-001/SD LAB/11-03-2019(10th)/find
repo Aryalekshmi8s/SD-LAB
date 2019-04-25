@@ -1,0 +1,160 @@
+student@T13:~$ find ~ -name lechu
+
+/home/student/lechu
+student@T13:~$ 
+student@T13:~$ find ~ -name budha.txt
+/home/student/lechu/budha.txt
+student@T13:~$ find . -name lechu
+./lechu
+student@T13:~$ find . -name osho.txt
+./lechu/osho.txt
+student@T13:~$ find ./lechu -name osho.txt
+./lechu/osho.txt
+student@T13:~$ find ./lechu -name *.txt
+student@T13:~$ 
+student@T13:~$ find ./lechu -name *.txt
+student@T13:~$ find . -name *.txt
+./check.txt
+./mca/arya/check.txt
+./popo/appu/check.txt
+student@T13:~$ find ~ -name *.txt
+/home/student/check.txt
+/home/student/mca/arya/check.txt
+/home/student/popo/appu/check.txt
+student@T13:~$ find ./lechu -name *.txt
+student@T13:~$ find /lechu -name *.txt
+find: ‘/lechu’: No such file or directory
+student@T13:~$ find ./lechu -name *.txt
+student@T13:~$ find  -name *.txt
+./check.txt
+./mca/arya/check.txt
+./popo/appu/check.txt
+student@T13:~$ find ./lechu  *.txt
+./lechu
+./lechu/budha.txt
+./lechu/grep
+./lechu/em.txt
+./lechu/osho.txt
+./lechu/em1.txt
+check.txt
+student@T13:~$ cd ..
+student@T13:/home$ cd lechu
+bash: cd: lechu: No such file or directory
+student@T13:/home$ cd ..
+student@T13:/$ cd lechu
+bash: cd: lechu: No such file or directory
+student@T13:/$ cd home
+student@T13:/home$ cd lechu
+bash: cd: lechu: No such file or directory
+student@T13:/home$ ls
+android  mca  student
+student@T13:/home$ cd student
+student@T13:~$ ls
+AJCE       Desktop           hello.txt~  luttappy  NetBeansProjects  snap
+arun       Documents         jetty       luttapy   Pictures          Templates
+check.txt  Downloads         large3.sh   mca       popo              Videos
+cp         examples.desktop  lechu       Music     Public            wc
+student@T13:~$ cd lechu
+student@T13:~/lechu$ find ./lechu  *.txt
+find: ‘./lechu’: No such file or directory
+budha.txt
+em1.txt
+em.txt
+osho.txt
+student@T13:~/lechu$ find  -name *.txt
+find: paths must precede expression: `em1.txt'
+find: possible unquoted pattern after predicate `-name'?
+student@T13:~/lechu$ find  -name "*.txt"
+./budha.txt
+./em.txt
+./osho.txt
+./em1.txt
+student@T13:~/lechu$ cd ..
+student@T13:~$ find ./lechu -name "*.txt"
+./lechu/budha.txt
+./lechu/em.txt
+./lechu/osho.txt
+./lechu/em1.txt
+student@T13:~$ find ./lechu -empty
+./lechu/em.txt
+./lechu/em1.txt
+student@T13:~$ cd lechu
+student@T13:~/lechu$ find -iname osho.txt
+./osho.txt
+student@T13:~/lechu$ find -type d -name lechu
+student@T13:~/lechu$ cd ..
+student@T13:~$ find -type d -name lechu
+./lechu
+student@T13:~$ cd lechu
+student@T13:~/lechu$ find -type f -name p.php
+./p.php
+student@T13:~/lechu$ find -type f -name "*.php"
+./p2.php
+./p.php
+student@T13:~/lechu$ cd ..
+student@T13:~$ find ~ -name  AJCE
+/home/student/AJCE
+student@T13:~$ 
+
+tar -czvf com.tar.gz *.txt
+budha.txt
+em1.txt
+em.txt
+osho.txt
+student@T13:~/lechu$ ls
+budha.txt  com.tar.gz  em1.txt  em.txt  find  grep  osho.txt  p2.php  p.php
+student@T13:~/lechu$ tar -xzvf com.tar.gz
+budha.txt
+em1.txt
+em.txt
+osho.txt
+student@T13:~/lechu$ tar -czf com1.tar.gz *.txt
+student@T13:~/lechu$ ls
+budha.txt    com.tar.gz  em.txt  grep      p2.php
+com1.tar.gz  em1.txt     find    osho.txt  p.php
+student@T13:~/lechu$ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,176 @@
+Socket programs are used to communicate between various processes usually running on different systems. It is mostly used to create a client-server environment.
+Functions used in server program:
+socket() –
+This call creates an unnamed socket and returns a file descriptor to the calling process. usage : int socket(int domain, int type, int protocol) Eg: sockfd=socket(AF_INET,SOCK_STREAM,0); here AF_INET means the the communication is over the internet domain.SOCL_STREAM indicates its a stream type of communication and 0 indicates the protocol used is TCP/IP
+
+bind() – 
+       It is a system call that binds a socket to an address. Here, the address would be the IP address of the current machine and the port    number. usage : bind(socket_fd, pointer_of_address_its_bound_to, size_of_address); Eg: bind(sockfd, (struct sockaddr *)&serv_addr,sizeof(Serv_addr)_); On failure, it returns a value less than zero.
+
+
+listen() –
+This call allows a process to listen on socket for communication. usage: listen(socket_fd, no_of_waiting_connections); so it takes in a socket file descriptor and the no. of connections waiting while the process is handling a particular connection. so they wait in a blocking queue. Eg : listen(sock_fd,5); so 5 connections can wait at the max.
+
+
+accept() –
+is a system call that causes the process to block until the client connects to the server. it returns a new descriptor and all communication should be carried out using the new file descriptor. usage: int accept(sockfd,pointer_to_address_of client, addr_storing_size_of_client_address); Eg: newsockfd= accept(sockfd, (struct sockaddr *)&cli_addr,&clilen); here cli_len=sizeof(cli_addr); so the newsockfd has the new socket address which will be used for communication. So, this command blocks until the read() of data is complete that is till the client has finished its write().
+
+
+
+
+
+
+
+Client Side Programming
+
+Establish a Socket Connection
+
+To connect to other machine we need a socket connection. A socket connection means the two machines have information about each other’s network location (IP Address) and TCP port.The java.net.Socket class represents a Socket. To open a socket:
+
+Socket socket = new Socket(“127.0.0.1”, 5000)
+
+    First argument – IP address of Server. ( 127.0.0.1  is the IP address of localhost, where code will run on single stand-alone machine).
+    Second argument – TCP Port. (Just a number representing which application to run on a server. For example, HTTP runs on port 80. Port number can be from 0 to 65535)
+
+
+
+Server Programming
+
+Establish a Socket Connection
+
+To write a server application two sockets are needed.
+
+    A ServerSocket which waits for the client requests (when a client makes a new Socket())
+    A plain old Socket socket to use for communication with the client.
+
+Communication
+
+getOutputStream() method is used to send the output through the socket.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+client.java
+
+import java.io.*;
+import java.net.*; 
+public class client
+{ 
+        public static void main(String[] args) throws IOException 
+               {
+                Socket clientSock=new Socket("local host", 3000);
+                System.out.println("Client connected to the server");
+               
+                BufferedReader keyRead=new BufferedReader(new InputStreamReader(System.in));
+                OutputStream ostream=clientSock.getOutputStream();
+              
+                PrintWriter pwrite=new PrintWriter(ostream,true);
+                InputStream istream=clientSock.getInputStream();
+               
+                BufferedReader receiveRead=new BufferedReader(new InputStreamReader(istream));
+                System.out.println("to Start the chat, type message and press Enter key"); 
+                String receiveMessage , sendMessage;
+                while(true)
+                {
+                        sendMessage=keyRead.readLine(); 
+                        pwrite.println(sendMessage);
+                        System.out.flush();
+                        if((receiveMessage=receiveRead.readLine())!=null)
+                        { 
+                                System.out.println("server:>"+receiveMessage);
+                        } 
+                        if(sendMessage.equals("bye"))
+                        {
+                                break;
+                        }
+                }
+                
+        }
+}
+
+
+
+
+server.java
+
+
+import java.io.*; 
+import java.net.*; 
+class server
+{ 
+        public static void main(String[] args) throws IOException
+        {
+                ServerSocket serverSock=new ServerSocket(3000);
+
+                System.out.println("waiting for client.........");
+
+                Socket socket=serverSock.accept();
+
+                System.out.println("client connected ");
+
+                BufferedReader keyRead=new BufferedReader(new InputStreamReader(System.in)); 
+
+                OutputStream ostream=socket.getOutputStream();
+
+                PrintWriter pw=new PrintWriter(ostream,true); 
+
+                InputStream istream=socket.getInputStream();
+
+                BufferedReader receiveRead=new BufferedReader(new InputStreamReader(istream));
+
+                String receiveMessage,sendMessage;
+
+                while(true)
+
+                {
+                        if((receiveMessage=receiveRead.readLine())!= null)
+
+                        {
+                                System.out.println("client:>"+ receiveMessage);
+                        }
+
+                        sendMessage=keyRead.readLine();
+
+                        pw.println(sendMessage);
+
+                        System.out.flush();
+
+                        if(sendMessage.equals("bye"))
+
+                        {
+                                break;
+                        }       
+                }
+        }
+}
+
+
+
+output
+
+javac client.java
+student@T13:~$ java client
+Client connected to the server
+to Start the chat, type message and press Enter key
+
+
+javac server.java
+student@T13:~$ java server
+waiting for client.........
+
+
+

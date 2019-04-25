@@ -1,0 +1,75 @@
+student@T13:~$ cd arya
+student@T13:~/arya$ cat f1.txt
+arya
+arjun
+dona
+asha
+albina
+student@T13:~/arya$ cat f2.txt
+kollam
+kottayam
+kannur
+idukki
+kottayam
+student@T13:~/arya$ cat f3.txt
+1
+2
+3
+4
+5
+student@T13:~/arya$ paste f1.txt f2.txt f3.txt
+arya	kollam	1
+arjun	kottayam	2
+dona	kannur	3
+asha	idukki	4
+albina	kottayam	5
+student@T13:~/arya$ paste f1.txt f2.txt 
+arya	kollam
+arjun	kottayam
+dona	kannur
+asha	idukki
+albina	kottayam
+student@T13:~/arya$ paste -d "," f1.txt f2.txt
+arya,kollam
+arjun,kottayam
+dona,kannur
+asha,idukki
+albina,kottayam
+student@T13:~/arya$ paste -d "/," f1.txt f3.txt
+arya/1
+arjun/2
+dona/3
+asha/4
+albina/5
+student@T13:~/arya$ paste -s  f2.txt f3.txt
+kollam	kottayam	kannur	idukki	kottayam
+1	2	3	4	5
+student@T13:~/arya$ paste -s -d ":" f1.txt f2.txt
+arya:arjun:dona:asha:albina
+kollam:kottayam:kannur:idukki:kottayam
+student@T13:~/arya$ paste -- <f1.txt 
+arya
+arjun
+dona
+asha
+albina
+student@T13:~/arya$ paste - - < f1.txt 
+arya	arjun
+dona	asha
+albina	
+student@T13:~/arya$ paste - - -< f1.txt 
+arya	arjun	dona
+asha	albina	
+student@T13:~/arya$ paste - - - < f1.txt 
+arya	arjun	dona
+asha	albina	
+student@T13:~/arya$ paste --v f2.txt
+paste (GNU coreutils) 8.28
+Copyright (C) 2017 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by David M. Ihnat and David MacKenzie.
+student@T13:~/arya$ 
+
